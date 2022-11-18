@@ -1,475 +1,530 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*pagina 1 mobile*/
-body{
-    font-family: "Bebas Neue", "arial", sans-serif;
-    
+body {
+  font-family: "Bebas Neue", "arial", sans-serif;
+
 }
 
-@media screen and (min-width: 200px){
-    
-.grid-container{
+@media screen and (min-width: 200px) {
+
+  .grid-container {
     /*background-color: white;*/
     width: 100%;
     height: 100vh;
     margin: 0;
     padding: 1rem;
     display: grid;
-    grid-gap: 1rem;        
+    grid-gap: 1rem;
     grid-template-rows: auto 1fr 1fr auto;
-    grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-    gap: 1rem;        
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
     grid-template-areas:
-          "header"
-          "nav"
-          "main"
-          "cards"
-          "footer";
-      align-items: center;
-    }
-
-    
-    .header-container-about{
-        display: flex;
-        flex-direction: column;
-        transform: translate(0%,-8%);
-        width: 100%;
-        padding: 2rem 2rem;
-        top: 0;
-        position: sticky;
-        z-index: 1;
-        background-color: /*#d7dfe2*/ rgba(0, 0, 0, 0.22);
-      }
-      .logo-img-about{
-        grid-area: logo;
-        width: 45px;
-        margin-bottom: .9rem;
-        margin-left: 1.3rem;
-        object-fit: cover;
-        background-size: cover;
-        background-position: center;
-      }
-      a{
-        font-style: none;
-        color: white;
-        text-decoration: none;
-      }
-      .nav__list-about{
-        display: block;
-        list-style-type: none;
-        grid-area: nav;
-      }
-      .nav__item-about{
-        margin-left: 2.3rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1rem;        
-      }
-      
-      /*----animation----*/
-.nav__item-about a{
-  position: relative;/*Que sea relativa absoluta*/
-  transition: all ease-in-out 250ms;
-}
-
-.nav__item-about a::after{
-  content: '';
-  position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-  display: block;
-  height: .1em;
-  width: 100%;
-  background-color: #616b74;
-  bottom: auto;
-  transition: all ease-in-out 250ms;
-}
-.nav__item-about a:hover::after{
-  width: 100%;
-}
-.nav__item-about a:hover{
-  color: #616b74;
-}
-      
-      /*---------------main about-------------*/
-
-      
-      .div-1{
-        background-image:url(./../assets/chowMain1\(2\).jpg);            
-        background-position: top,bottom;
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-align: center;   
-        object-fit: cover;
-        height: 20vh;
-        position: relative;
-      }
-      .div-2{
-        background-image:url(./../assets/chow\ chow.jpg);
-        background-position: top,bottom;
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-align: center;   
-        object-fit: cover;
-        height: 20vh;
-        position: relative;
-      }
-      .background__text-about{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 3rem;
-        text-transform: uppercase;
-        color: white;
-      }
-      .background__subTitle-about{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: -6rem;
-        text-transform: uppercase;                
-        color: white;
-      }
-
-      /*--------------------cards about us-------------------------------------*/
-
-      .cards-container-about{
-        margin-top: 1rem;
-        display: flex;
-        align-content: center;
-        flex-direction: column;
-        /*height: 100vh;*/
-        }
-        
-        .card-about{
-        overflow: hidden;
-        box-shadow: 0px 2px 20px #d7dfe2;
-        background-color: white;    
-        border-radius: 0.5rem;    
-        position: relative;
-        width: 350px; /*tamaño card*/
-        height: 200px;/*tamaño card*/
-        /*height: 100vh;*/
-        margin: 3rem 1rem;
-        transition: 250ms all ease-in-out;
-        cursor: pointer;
-      
-        }
-        .card-about:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 2px 40px #d7dfe2;;
-        }
-        
-        .card__image-about{
-        height: 14rem;
-        width: 100%;
-        object-fit: cover;
-        }
-        .category-tag-about {
-        font-size: 1.4rem;
-        color: white;
-        background: rgb(192, 180, 180,0.5);
-        padding: 0.5rem 1.3rem 1rem;
-        text-transform: uppercase;
-        position: absolute;
-        z-index: 1;
-        top: 1rem;
-        border-radius:0 2rem 2rem 0;
-        text-align: center;
-        }
-        
-/*-------------------------footer about us-------------------------*/        
-        footer{
-            width: 100%;
-            padding: 50px 0;
-            
-            }
-            .container__footer{
-            display: flex;
-            flex-wrap: wrap;/*que se adapten una abajo de la otra si es necesario*/
-            flex-direction: column;
-            align-content: center;
-            max-width: 1200px;
-            margin: auto;
-            }
-            .nav__listC{
-            display: flex;
-            flex-direction: column;
-            }
-            .footer__box{
-            display: flex;
-            flex-direction: column; /*Sin esto, se ve todo como fila*/
-            text-align: center;
-            padding: 20px;
-            }
-            
-            .footer__box .logo img{
-            width: 70px;/*Le damos el tamaño al logo*/
-            /*margin-top: 5px;*/
-            }
-            
-            .footer__box .terms{
-            max-width: 300px;
-            margin-top: 10px;/*separa el parrafo del logo footer*/
-            font-weight: 300;
-            font-size: 16px; /*tamaño del parrafo*/
-            color: #7a7a7a;
-            }
-            
-            .footer__box h2{
-            margin-bottom: 30px;/*tiramos abajo lo q esta debajo del h2*/
-            }
-            
-            .footer__box a{
-            margin-top: 10px; /*Nos sirve como interlineado*/
-            color: #7a7a7a;
-            font-weight: 700;
-            }
-            
-            .footer__box .nav__list .nav__link{
-            list-style: none;
-            text-decoration: none;
-            color: #7a7a7a;
-            line-height: 10px;/*interlineado de la lista*/
-            text-transform: lowercase;
-            font-weight: 400;
-            }
-            li{
-            margin-top: 10px;
-            }
-            
-            .footer__box a .fab{
-            font-size: 20px;
-            }
-          
-
-      .description-about{
-        grid-area: desc;
-      }
-      
-        .nav {
-        grid-area: nav;
-        }
-      
-        header{
-        grid-area: header;
-        }
-        main {
-        grid-area: main;
-        }
-        footer {
-        grid-area: footer;
-        }
-        
-        .cards-container{
-          grid-area: cards
-        }
-      
-        .cards-container-about{
-          grid-area: cards
-        }
-        .description-1{
-          grid-area: desc1;
-        }
-        .description-2{
-          grid-area: desc2;
-        }
+      "header"
+      "nav"
+      "main"
+      "cards"
+      "footer";
+    align-items: center;
+  }
 
 
-        /*---------------------------------pagina 2-----------------------------------------------------------------------------*/
-        .grid-container{
-          /*background-color: white;*/
-          width: 100%;
-          height: 100vh;
-          margin: 0;
-          padding: 1rem;
-          display: grid;
-          grid-gap: 1rem;        
-          grid-template-rows: auto 1fr 1fr auto;
-          grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-          gap: 1rem;        
-          grid-template-areas:
-                "header"
-                "nav"
-                "main"
-                "cards"
-                "footer";
-            align-items: center;
-          }
-      
-          
-          .header-container{
-              display: flex;
-              flex-direction: column;
-              transform: translate(0%,-8%);
-              width: 100%;
-              padding: 2rem 2rem;
-              top: 0;
-              position: sticky;
-              z-index: 1;
-              background-color: /*#d7dfe2*/ rgba(0, 0, 0, 0.22);
-            }
-            .logo-img{
-              grid-area: logo;
-              width: 45px;
-              margin-bottom: .9rem;
-              margin-left: 1.3rem;
-              object-fit: cover;
-              background-size: cover;
-              background-position: center;
-            }
-            a{
-              font-style: none;
-              color: white;
-              text-decoration: none;
-            }
-            .nav__list{
-              display: block;
-              list-style-type: none;
-              grid-area: nav;
-            }
-            .nav__item{
-              margin-left: 2.3rem;
-              text-transform: uppercase;
-              font-weight: bold;
-              font-size: 1rem;        
-            }
-            
-            /*----animation----*/
-      .nav__item a{
-        position: relative;/*Que sea relativa absoluta*/
-        transition: all ease-in-out 250ms;
-      }
-      
-      .nav__item a::after{
-        content: '';
-        position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-        display: block;
-        height: .1em;
-        width: 100%;
-        background-color: #616b74;
-        bottom: auto;
-        transition: all ease-in-out 250ms;
-      }
-      .nav__item a:hover::after{
-        width: 100%;
-      }
-      .nav__item a:hover{
-        color: #616b74;
-      }    
-  
-    /*main pagina index */
-  
-    /*---------------main about-------------*/
-  
-        
-    .main-container{
-      overflow: hidden;
-      font-family: "Bebas Neue", "arial", sans-serif;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;    
-      color: white;
-      margin-top: -16rem;
-      margin-bottom: 3rem;
-      background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg); /*efecto 1*/
-      object-fit: cover;
-      background-size: cover;
-      background-position: center;
-      }
-  
-    
-    
-      .background-text{
-        text-align: center;
-        align-items: center;
-        color: white;
-        width: 100%;
-        line-height: 1.5;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        }
-        .background__title{
-        line-height: 1.5;
-        font-family: "Bebas Neue";
-        font-weight: normal;
-        font-size: 2rem;    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-transform: uppercase;               
-        }
-        .btn__chow{
-        padding: .7rem;
-        border-radius: 2rem;
-        border: 0.35rem solid rgb(255, 81, 0);
-        margin-top: .3rem;
-        background-color: #d7dfe2;
-        text-transform: uppercase;               
-        }
-    
-    
-      .background__text-about{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      padding: 3rem;
-      text-transform: uppercase;
-      color: white;
-    }
-    .background__subTitle-about{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      padding: -6rem;
-      text-transform: uppercase;                
-      color: white;
-    }
-  
-  
-  
+  .header-container-about {
+    display: flex;
+    flex-direction: column;
+    transform: translate(0%, -8%);
+    width: 100%;
+    padding: 2rem 2rem;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    background-color:
+      /*#d7dfe2*/
+      rgba(0, 0, 0, 0.22);
+  }
+
+  .logo-img-about {
+    grid-area: logo;
+    width: 45px;
+    margin-bottom: .9rem;
+    margin-left: 1.3rem;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  a {
+    font-style: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav__list-about {
+    display: block;
+    list-style-type: none;
+    grid-area: nav;
+  }
+
+  .nav__item-about {
+    margin-left: 2.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  /*----animation----*/
+  .nav__item-about a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .1em;
+    width: 100%;
+    background-color: #616b74;
+    bottom: auto;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item-about a:hover {
+    color: #616b74;
+  }
+
+  /*---------------main about-------------*/
+
+
+  .div-1 {
+    background-image: url(./../assets/chowMain1\(2\).jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 20vh;
+    position: relative;
+  }
+
+  .div-2 {
+    background-image: url(./../assets/chow\ chow.jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 20vh;
+    position: relative;
+  }
+
+  .background__text-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .background__subTitle-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: -6rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  /*--------------------cards about us-------------------------------------*/
+
+  .cards-container-about {
+    margin-top: 1rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    /*height: 100vh;*/
+  }
+
+  .card-about {
+    overflow: hidden;
+    box-shadow: 0px 2px 20px #d7dfe2;
+    background-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 350px;
+    /*tamaño card*/
+    height: 200px;
+    /*tamaño card*/
+    /*height: 100vh;*/
+    margin: 3rem 1rem;
+    transition: 250ms all ease-in-out;
+    cursor: pointer;
+
+  }
+
+  .card-about:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 40px #d7dfe2;
+    ;
+  }
+
+  .card__image-about {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .category-tag-about {
+    font-size: 1.4rem;
+    color: white;
+    background: rgb(192, 180, 180, 0.5);
+    padding: 0.5rem 1.3rem 1rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: center;
+  }
+
+  /*-------------------------footer about us-------------------------*/
+  footer {
+    width: 100%;
+    padding: 50px 0;
+
+  }
+
+  .container__footer {
+    display: flex;
+    flex-wrap: wrap;
+    /*que se adapten una abajo de la otra si es necesario*/
+    flex-direction: column;
+    align-content: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .nav__listC {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__box {
+    display: flex;
+    flex-direction: column;
+    /*Sin esto, se ve todo como fila*/
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer__box .logo img {
+    width: 70px;
+    /*Le damos el tamaño al logo*/
+    /*margin-top: 5px;*/
+  }
+
+  .footer__box .terms {
+    max-width: 300px;
+    margin-top: 10px;
+    /*separa el parrafo del logo footer*/
+    font-weight: 300;
+    font-size: 16px;
+    /*tamaño del parrafo*/
+    color: #7a7a7a;
+  }
+
+  .footer__box h2 {
+    margin-bottom: 30px;
+    /*tiramos abajo lo q esta debajo del h2*/
+  }
+
+  .footer__box a {
+    margin-top: 10px;
+    /*Nos sirve como interlineado*/
+    color: #7a7a7a;
+    font-weight: 700;
+  }
+
+  .footer__box .nav__list .nav__link {
+    list-style: none;
+    text-decoration: none;
+    color: #7a7a7a;
+    line-height: 10px;
+    /*interlineado de la lista*/
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+
+  li {
+    margin-top: 10px;
+  }
+
+  .footer__box a .fab {
+    font-size: 20px;
+  }
+
+
+  .description-about {
+    grid-area: desc;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .cards-container {
+    grid-area: cards
+  }
+
+  .cards-container-about {
+    grid-area: cards
+  }
+
+  .description-1 {
+    grid-area: desc1;
+  }
+
+  .description-2 {
+    grid-area: desc2;
+  }
+
+
+  /*---------------------------------pagina 2-----------------------------------------------------------------------------*/
+  .grid-container {
+    /*background-color: white;*/
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "cards"
+      "footer";
+    align-items: center;
+  }
+
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    transform: translate(0%, -8%);
+    width: 100%;
+    padding: 2rem 2rem;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    background-color:
+      /*#d7dfe2*/
+      rgba(0, 0, 0, 0.22);
+  }
+
+  .logo-img {
+    grid-area: logo;
+    width: 45px;
+    margin-bottom: .9rem;
+    margin-left: 1.3rem;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  a {
+    font-style: none;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav__list {
+    display: block;
+    list-style-type: none;
+    grid-area: nav;
+  }
+
+  .nav__item {
+    margin-left: 2.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  /*----animation----*/
+  .nav__item a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .1em;
+    width: 100%;
+    background-color: #616b74;
+    bottom: auto;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item a:hover {
+    color: #616b74;
+  }
+
+  /*main pagina index */
+
+  /*---------------main about-------------*/
+
+
+  .main-container {
+    overflow: hidden;
+    font-family: "Bebas Neue", "arial", sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: -16rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg);
+    /*efecto 1*/
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+
+  .background-text {
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .background__title {
+    line-height: 1.5;
+    font-family: "Bebas Neue";
+    font-weight: normal;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .btn__chow {
+    padding: .7rem;
+    border-radius: 2rem;
+    border: 0.35rem solid rgb(255, 81, 0);
+    margin-top: .3rem;
+    background-color: #d7dfe2;
+    text-transform: uppercase;
+  }
+
+
+  .background__text-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .background__subTitle-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: -6rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+
+
   /*cards index*/
-  
-  
-  .cards-container{
+
+
+  .cards-container {
     margin-top: 2.4rem;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
     /*height: 100vh;*/
-    }
-    
-    .card{
+  }
+
+  .card {
     overflow: hidden;
     box-shadow: 0px 2px 20px #d7dfe2;
-    background-color: white;    
-    border-radius: 0.5rem;    
+    background-color: white;
+    border-radius: 0.5rem;
     position: relative;
-    width: 350px; /*tamaño card*/
-    height: 406px;/*tamaño card*/
+    width: 350px;
+    /*tamaño card*/
+    height: 406px;
+    /*tamaño card*/
     /*height: 100vh;*/
     margin: 1rem;
     transition: 250ms all ease-in-out;
     cursor: pointer;
-    }
-    .card:hover {
+  }
+
+  .card:hover {
     transform: scale(1.05);
-    box-shadow: 0px 2px 40px #d7dfe2;;
-    }
-    
-    .card-banner img{
+    box-shadow: 0px 2px 40px #d7dfe2;
+    ;
+  }
+
+  .card-banner img {
     height: 14rem;
     width: 100%;
     object-fit: cover;
-    }
-    .category-tag {
+  }
+
+  .category-tag {
     font-size: 1.4rem;
     color: white;
     background: red;
@@ -478,1002 +533,1099 @@ body{
     position: absolute;
     z-index: 1;
     top: 1rem;
-    border-radius:0 2rem 2rem 0;
+    border-radius: 0 2rem 2rem 0;
     text-align: center;
-    }
-    .card__btn{
+  }
+
+  .card__btn {
     padding: .7rem 3rem;
     border-radius: 2rem;
     border: 0.35rem solid rgb(255, 81, 0);
     margin: 0.2rem 0.7rem;
     background-color: #d7dfe2;
-    transform: translate(67%,-1%);
-    }
-    
-    .card-body{/*texto de la card*/
-      margin: 2rem 1rem 1rem 1rem;
-      text-align: center;
-    }
-    
-    .card__title{/*Titulo que se encuentra dentro de card-body*/
-       line-height: 1.5rem;
-       margin: 1rem 0 0.5rem;
-       font-family: 'Bebas Neue', cursive;
-    }
-    
-    .card__description{/*Descripcion que se encuentra dentro de card-body*/
-       color:#616b74;
-       font-size: 0.9rem;
-       font-family: 'Montserrat', sans-serif;
-    }
+    transform: translate(67%, -1%);
+  }
+
+  .card-body {
+    /*texto de la card*/
+    margin: 2rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+
+  .card__title {
+    /*Titulo que se encuentra dentro de card-body*/
+    line-height: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    font-family: 'Bebas Neue', cursive;
+  }
+
+  .card__description {
+    /*Descripcion que se encuentra dentro de card-body*/
+    color: #616b74;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+  }
 
 
-    }
+}
 
 
 
-    @media screen and (min-width: 480px) {
-      .grid-container{
-     /*background-color: white;*/
-     width: 100%;
-     height: 100vh;
-     margin: 0;
-     padding: 1rem;
-     display: grid;
-     grid-gap: 1rem;        
-     grid-template-rows: auto 1fr 1fr auto;
-     grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-     gap: 1rem;        
-     grid-template-areas:
-           "header"
-           "nav"
-           "main"
-           "cards"
-           "footer";
-       align-items: center;
-     }
- 
-  /*------------------------nav--------------------------*/   
-  .header-container-about{
-   font-family: "Bebas Neue", "arial", sans-serif;          
-   font-weight: bold;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   width: 100%;
-   position: sticky;
-   top: 0%;
-   z-index: 2;
-   color: black;
-   padding: 1.7rem 1.7rem;
-   overflow: hidden;
-   }
-   
-   header{
-     opacity: .8;
-   }
-   .logo-img-about{
-   width: 70px;
-   
-   }
-   .nav__list-about{
-   display: flex;
-   list-style-type: none;
-   
-   }
-   .nav__item-about{
-   margin-left: 2rem;
-   font-size: .9rem;
-   }
-   
-   /*----animation----*/
-   .nav__item-about a{
-     position: relative;/*Que sea relativa absoluta*/
-     transition: all ease-in-out 250ms;
-   }
-   
-   .nav__item-about a::after{
-     content: '';
-     position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-     display: block;
-     height: .3em;
-     width: 00%;
-     background-color: #616b74;
-     bottom: -1em;
-     transition: all ease-in-out 250ms;
-   }
-   .nav__item-about a:hover::after{
-     width: 100%;
-   }
-   .nav__item-about a:hover{
-     color: #616b74;
-   }
- 
-   
-       
-       
-       /*---------------main about-------------*/
- 
-       /*main{
+@media screen and (min-width: 480px) {
+  .grid-container {
+    /*background-color: white;*/
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "cards"
+      "footer";
+    align-items: center;
+  }
+
+  /*------------------------nav--------------------------*/
+  .header-container-about {
+    font-family: "Bebas Neue", "arial", sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    color: black;
+    padding: 1.7rem 1.7rem;
+    overflow: hidden;
+  }
+
+  header {
+    opacity: .8;
+  }
+
+  .logo-img-about {
+    width: 70px;
+
+  }
+
+  .nav__list-about {
+    display: flex;
+    list-style-type: none;
+
+  }
+
+  .nav__item-about {
+    margin-left: 2rem;
+    font-size: .9rem;
+  }
+
+  /*----animation----*/
+  .nav__item-about a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .3em;
+    width: 00%;
+    background-color: #616b74;
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item-about a:hover {
+    color: #616b74;
+  }
+
+
+
+
+  /*---------------main about-------------*/
+
+  /*main{
          overflow: hidden;
        }*/
-       .div-1{
-         background-image:url(./../assets/chowMain1\(2\).jpg);            
-         background-position: top,bottom;
-         background-size: cover;
-         background-repeat: no-repeat;
-         text-align: center;   
-         object-fit: cover;
-         height: 20vh;
-         position: relative;        
-       }
-       .div-2{
-         background-image:url(./../assets/chow\ chow.jpg);
-         background-position: top,bottom;
-         background-size: cover;
-         background-repeat: no-repeat;
-         text-align: center;   
-         object-fit: cover;
-         height: 20vh;
-         position: relative;
-       }
-       .background__text-about{
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         padding: 4rem;
-         text-transform: uppercase;
-         color: white;
-       }
-       .background__subTitle-about{
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         padding: 5rem;
-         text-transform: uppercase;       
-         color: white; 
-         letter-spacing: .2rem;
-         /*transform: translate(4px, -90px);*/
-       }
- 
-       /*--------------------cards about us-------------------------------------*/
- 
-       .cards-container-about{
-         margin-top: 2.4rem;
-         display: flex;
-         align-content: center;
-         flex-direction: column;
-         flex-wrap: wrap;
-         /*height: 100vh;*/
-         }
-         
-         .card-about{
-         overflow: hidden;
-         box-shadow: 0px 2px 20px #d7dfe2;
-         background-color: white;    
-         border-radius: 0.5rem;    
-         position: relative;
-         width: 350px; /*tamaño card*/
-         height: 200px;/*tamaño card*/
-         /*height: 100vh;*/
-         margin: 3rem 1rem;
-         transition: 250ms all ease-in-out;
-         cursor: pointer;
-       
-         }
-         .card-about:hover {
-         transform: scale(1.05);
-         box-shadow: 0px 2px 40px #d7dfe2;;
-         }
-         
-         .card__image-about{
-         height: 14rem;
-         width: 100%;
-         object-fit: cover;
-         }
-         .category-tag-about {
-         font-size: 1.4rem;
-         color: white;
-         background: rgb(192, 180, 180,0.5);
-         padding: 0.5rem 1.3rem 1rem;
-         text-transform: uppercase;
-         position: absolute;
-         z-index: 1;
-         top: 1rem;
-         border-radius:0 2rem 2rem 0;
-         text-align: center;
-         }
-         
- /*-------------------------footer about us-------------------------*/        
-         footer{
-             width: 100%;
-             padding: 50px 0;
-             
-             }
-             .container__footer{
-             display: flex;
-             flex-wrap: wrap;/*que se adapten una abajo de la otra si es necesario*/
-             flex-direction: column;
-             align-content: center;
-             max-width: 1200px;
-             margin: auto;
-             }
-             .nav__listC{
-             display: flex;
-             flex-direction: column;
-             }
-             .footer__box{
-             display: flex;
-             flex-direction: column; /*Sin esto, se ve todo como fila*/
-             text-align: center;
-             padding: 20px;
-             }
-             
-             .footer__box .logo img{
-             width: 70px;/*Le damos el tamaño al logo*/
-             /*margin-top: 5px;*/
-             }
-             
-             .footer__box .terms{
-             max-width: 300px;
-             margin-top: 10px;/*separa el parrafo del logo footer*/
-             font-weight: 300;
-             font-size: 16px; /*tamaño del parrafo*/
-             color: #7a7a7a;
-             }
-             
-             .footer__box h2{
-             margin-bottom: 30px;/*tiramos abajo lo q esta debajo del h2*/
-             }
-             
-             .footer__box a{
-             margin-top: 10px; /*Nos sirve como interlineado*/
-             color: #7a7a7a;
-             font-weight: 700;
-             }
-             
-             .footer__box .nav__list .nav__link{
-             list-style: none;
-             text-decoration: none;
-             color: #7a7a7a;
-             line-height: 10px;/*interlineado de la lista*/
-             text-transform: lowercase;
-             font-weight: 400;
-             }
-             li{
-             margin-top: 10px;
-             }
-             
-             .footer__box a .fab{
-             font-size: 20px;
-             }
-           
- 
- 
- 
-       .description-about{
-         grid-area: desc;
-       }
-       
-         .nav {
-         grid-area: nav;
-         }
-       
-         header{
-         grid-area: header;
-         }
-         main {
-         grid-area: main;
-         margin: -2rem;
-         }
-         footer {
-         grid-area: footer;
-         }
-         
-         .cards-container{
-           grid-area: cards
-         }
-       
-         .cards-container-about{
-           grid-area: cards
-         }
-         .description-1{
-           grid-area: desc1;
-         }
-         .description-2{
-           grid-area: desc2;
-         }
- 
-         .grid-container{
-           /*background-color: white;*/
-           width: 100%;
-           height: 100vh;
-           margin: auto;
-           padding: 1rem;
-           display: grid;
-           grid-gap: 1rem;        
-           grid-template-rows: auto 1fr 1fr auto;
-           grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-           gap: 1rem;        
-           grid-template-areas:
-                 "header header header"              
-                 "main main main"
-                 "cards cards cards"
-                 "desc desc desc"
-                "footer footer footer";
-             align-items: center;
-           }
-                   
-   
-             .header-container{
-               font-family: "Bebas Neue", "arial", sans-serif;
-               overflow: hidden;
-               font-weight: bold;
-               font-size: 12px;
-               display: flex;
-               flex-direction: row;
-               justify-content: space-between;
-               width: 100%;
-               position: sticky;
-               top: 0%;
-               z-index: 2;
-               color: black;
-               }
-               
-               header{
-                 opacity: .8;
-               }
-               .logo-img{
-               width: 70px;
-               
-               }
-               .nav__list{
-               display: flex;
-               list-style-type: none;
-               
-               }
-               .nav__item{
-               margin-left: 2.5rem;
-               font-size: 1.4rem;
-               }
-               
-               /*----animation----*/
-               .nav__item a{
-                 position: relative;/*Que sea relativa absoluta*/
-                 transition: all ease-in-out 250ms;
-               }
-               
-               .nav__item a::after{
-                 content: '';
-                 position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-                 display: block;
-                 height: .4em;
-                 width: 00%;
-                 background-color: #616b74;
-                 bottom: -1em;
-                 transition: all ease-in-out 250ms;
-               }
-               .nav__item a:hover::after{
-                 width: 100%;
-               }
-               .nav__item a:hover{
-                 color: #616b74;
-               }
- 
- 
- 
-               .main-container{
-                 overflow: hidden;
-                 font-family: "Bebas Neue", "arial", sans-serif;
-                 width: 100%;
-                 height: 100vh;
-                 display: flex;
-                 flex-direction: row;
-                 justify-content: center;
-                 align-items: center;    
-                 color: white;
-                 margin: auto;
-                 margin-bottom: 3rem;
-                 background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg); /*efecto 1*/
-                 object-fit: cover;
-                 background-size: cover;
-                 background-position: center;
-                 }
-             
-               
-               
-                 .background-text{
-                   text-align: center;
-                   align-items: center;
-                   color: white;
-                   width: 100%;
-                   line-height: 1.5;
-                   display: flex;
-                   flex-direction: column;
-                   justify-content: center;
-                   }
-                   .background__title{
-                   line-height: 1.5;
-                   font-family: "Bebas Neue";
-                   font-weight: normal;
-                   font-size: 6rem;    
-                   display: flex;
-                   flex-direction: column;
-                   justify-content: center;
-                   text-transform: uppercase;               
-                   letter-spacing: .2rem;
-                   }
-                   .btn__chow{
-                   padding: .7rem;
-                   border-radius: 2rem;
-                   border: 0.35rem solid rgb(255, 81, 0);
-                   margin-top: .3rem;
-                   background-color: #d7dfe2;
-                   text-transform: uppercase;               
-                   }
-               
-               
-                 
-               .background__subTitle{
-                 letter-spacing: .2rem;
-                 text-transform: uppercase;                
-                 color: white;
-                 margin-bottom: 1rem;
-               }
-             
-           
- 
- 
- 
- 
- 
- 
- 
- 
-     }
-    
+  .div-1 {
+    background-image: url(./../assets/chowMain1\(2\).jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 20vh;
+    position: relative;
+  }
+
+  .div-2 {
+    background-image: url(./../assets/chow\ chow.jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 20vh;
+    position: relative;
+  }
+
+  .background__text-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .background__subTitle-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: .2rem;
+    /*transform: translate(4px, -90px);*/
+  }
+
+  /*--------------------cards about us-------------------------------------*/
+
+  .cards-container-about {
+    margin-top: 2.4rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*height: 100vh;*/
+  }
+
+  .card-about {
+    overflow: hidden;
+    box-shadow: 0px 2px 20px #d7dfe2;
+    background-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 350px;
+    /*tamaño card*/
+    height: 200px;
+    /*tamaño card*/
+    /*height: 100vh;*/
+    margin: 3rem 1rem;
+    transition: 250ms all ease-in-out;
+    cursor: pointer;
+
+  }
+
+  .card-about:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 40px #d7dfe2;
+    ;
+  }
+
+  .card__image-about {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .category-tag-about {
+    font-size: 1.4rem;
+    color: white;
+    background: rgb(192, 180, 180, 0.5);
+    padding: 0.5rem 1.3rem 1rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: center;
+  }
+
+  /*-------------------------footer about us-------------------------*/
+  footer {
+    width: 100%;
+    padding: 50px 0;
+
+  }
+
+  .container__footer {
+    display: flex;
+    flex-wrap: wrap;
+    /*que se adapten una abajo de la otra si es necesario*/
+    flex-direction: column;
+    align-content: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .nav__listC {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__box {
+    display: flex;
+    flex-direction: column;
+    /*Sin esto, se ve todo como fila*/
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer__box .logo img {
+    width: 70px;
+    /*Le damos el tamaño al logo*/
+    /*margin-top: 5px;*/
+  }
+
+  .footer__box .terms {
+    max-width: 300px;
+    margin-top: 10px;
+    /*separa el parrafo del logo footer*/
+    font-weight: 300;
+    font-size: 16px;
+    /*tamaño del parrafo*/
+    color: #7a7a7a;
+  }
+
+  .footer__box h2 {
+    margin-bottom: 30px;
+    /*tiramos abajo lo q esta debajo del h2*/
+  }
+
+  .footer__box a {
+    margin-top: 10px;
+    /*Nos sirve como interlineado*/
+    color: #7a7a7a;
+    font-weight: 700;
+  }
+
+  .footer__box .nav__list .nav__link {
+    list-style: none;
+    text-decoration: none;
+    color: #7a7a7a;
+    line-height: 10px;
+    /*interlineado de la lista*/
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+
+  li {
+    margin-top: 10px;
+  }
+
+  .footer__box a .fab {
+    font-size: 20px;
+  }
 
 
-     @media screen and (min-width: 768px) {
-      .grid-container{
-          /*background-color: white;*/
-          width: 100%;
-          height: 100vh;
-          margin: 0;
-          padding: 1rem;
-          display: grid;
-          grid-gap: 1rem;        
-          grid-template-rows: auto 1fr 1fr auto;
-          grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-          gap: 1rem;        
-          grid-template-areas:
-                "header header header"              
-                "main main main"
-                "cards cards cards"
-                "desc desc desc"
-               "footer footer footer";
-            align-items: center;
-          }
-                  
-  
-            .header-container-about{
-              font-family: "Bebas Neue", "arial", sans-serif;
-              font-weight: bold;
-              font-size: 1.3rem;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              width: 100%;
-              position: sticky;
-              top: 0%;
-              z-index: 2;
-              color: black;
-              }
-              
-              header{
-                opacity: .8;
-              }
-              .logo-img-about{
-              width: 70px;
-              
-              }
-              .nav__list-about{
-              display: flex;
-              list-style-type: none;
-              
-              }
-              .nav__item-about{
-              margin-left: 2.5rem;
-              font-size: 1.4rem;
-              }
-              
-              /*----animation----*/
-              .nav__item-about a{
-                position: relative;/*Que sea relativa absoluta*/
-                transition: all ease-in-out 250ms;
-              }
-              
-              .nav__item-about a::after{
-                content: '';
-                position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-                display: block;
-                height: .4em;
-                width: 00%;
-                background-color: #616b74;
-                bottom: -1em;
-                transition: all ease-in-out 250ms;
-              }
-              .nav__item-about a:hover::after{
-                width: 100%;
-              }
-              .nav__item-about a:hover{
-                color: #616b74;
-              }
-            
-            /*---------------main about-------------*/
-      
-            
-            
-            .div-1{
-              background-image:url(./../assets/chowMain1\(2\).jpg);            
-              background-position: top,bottom;
-              background-size: cover;
-              background-repeat: no-repeat;
-              text-align: center;   
-              object-fit: cover;
-              height: 40vh;
-              position: relative;
-            }
-            .div-2{
-              background-image:url(./../assets/chow\ chow.jpg);
-              background-position: top,bottom;
-              background-size: cover;
-              background-repeat: no-repeat;
-              text-align: center;   
-              object-fit: cover;
-              height: 40vh;
-              position: relative;
-            }
-            .background__text-about{
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              padding: 6rem;
-              text-transform: uppercase;
-              font-size: 2.5rem;
-              color: white;
-              letter-spacing: .7rem;
-            }
-            .background__subTitle-about{
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              padding: 3.3rem;
-              text-transform: uppercase;       
-              font-size: 2.4rem; 
-              color: white;
-              letter-spacing: 1rem;
-              /*transform: translate(4px, -206px);*/
-            }
-      
-            /*--------------------cards about us-------------------------------------*/
-      
-            .cards-container-about{
-              /*margin-top: 1.4rem;
+
+
+  .description-about {
+    grid-area: desc;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    margin: -2rem;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .cards-container {
+    grid-area: cards
+  }
+
+  .cards-container-about {
+    grid-area: cards
+  }
+
+  .description-1 {
+    grid-area: desc1;
+  }
+
+  .description-2 {
+    grid-area: desc2;
+  }
+
+  .grid-container {
+    /*background-color: white;*/
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "cards cards cards"
+      "desc desc desc"
+      "footer footer footer";
+    align-items: center;
+  }
+
+
+  .header-container {
+    font-family: "Bebas Neue", "arial", sans-serif;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    color: black;
+  }
+
+  header {
+    opacity: .8;
+  }
+
+  .logo-img {
+    width: 70px;
+
+  }
+
+  .nav__list {
+    display: flex;
+    list-style-type: none;
+
+  }
+
+  .nav__item {
+    margin-left: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  /*----animation----*/
+  .nav__item a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .4em;
+    width: 00%;
+    background-color: #616b74;
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item a:hover {
+    color: #616b74;
+  }
+
+
+
+  .main-container {
+    overflow: hidden;
+    font-family: "Bebas Neue", "arial", sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: auto;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg);
+    /*efecto 1*/
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+
+  .background-text {
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .background__title {
+    line-height: 1.5;
+    font-family: "Bebas Neue";
+    font-weight: normal;
+    font-size: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+  }
+
+  .btn__chow {
+    padding: .7rem;
+    border-radius: 2rem;
+    border: 0.35rem solid rgb(255, 81, 0);
+    margin-top: .3rem;
+    background-color: #d7dfe2;
+    text-transform: uppercase;
+  }
+
+
+
+  .background__subTitle {
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    /*background-color: white;*/
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "cards cards cards"
+      "desc desc desc"
+      "footer footer footer";
+    align-items: center;
+  }
+
+
+  .header-container-about {
+    font-family: "Bebas Neue", "arial", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    color: black;
+  }
+
+  header {
+    opacity: .8;
+  }
+
+  .logo-img-about {
+    width: 70px;
+
+  }
+
+  .nav__list-about {
+    display: flex;
+    list-style-type: none;
+
+  }
+
+  .nav__item-about {
+    margin-left: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  /*----animation----*/
+  .nav__item-about a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .4em;
+    width: 00%;
+    background-color: #616b74;
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item-about a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item-about a:hover {
+    color: #616b74;
+  }
+
+  /*---------------main about-------------*/
+
+
+
+  .div-1 {
+    background-image: url(./../assets/chowMain1\(2\).jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 40vh;
+    position: relative;
+  }
+
+  .div-2 {
+    background-image: url(./../assets/chow\ chow.jpg);
+    background-position: top, bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    object-fit: cover;
+    height: 40vh;
+    position: relative;
+  }
+
+  .background__text-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 6rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: .7rem;
+  }
+
+  .background__subTitle-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3.3rem;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: white;
+    letter-spacing: 1rem;
+    /*transform: translate(4px, -206px);*/
+  }
+
+  /*--------------------cards about us-------------------------------------*/
+
+  .cards-container-about {
+    /*margin-top: 1.4rem;
               display: flex;
               align-content: center;
               flex-direction: column;*/
-              
-              display: flex;
-              flex-direction: row;
-              /* flex-wrap: wrap; */
-              width: 100%;
-              height: 100vh;
-              justify-content: space-around;
-              margin-top: 1rem;
-              z-index: 1;
-              background: white;
-              margin-bottom: 6rem;
-              
-              }
-              
-              .card-about{
-              overflow: hidden;
-              box-shadow: 0px 2px 20px #d7dfe2;
-              background-color: white;    
-              border-radius: 0.5rem;    
-              position: relative;
-              width: 350px; /*tamaño card*/
-              height: 200px;/*tamaño card*/
-              /*height: 100vh;*/
-              margin: 3rem 1rem;
-              transition: 250ms all ease-in-out;
-              cursor: pointer;
-              width: 45%;
-              height: 33%;
-              object-fit: cover;
-              background-repeat: no-repeat;
-              background-position: center;
-              }
-              .card-about:hover {
-              transform: scale(1.05);
-              box-shadow: 0px 2px 40px #d7dfe2;
-              }
-              
-  
-              .category-tag-about {
-              font-size: 1.4rem;
-              color: white;
-              background: rgb(192, 180, 180,0.5);
-              padding: 0.5rem 1.3rem 1rem;
-              text-transform: uppercase;
-              position: absolute;
-              z-index: 1;
-              top: 1rem;
-              border-radius:0 2rem 2rem 0;
-              text-align: center;
-              }
-          
-      
-              /*description*/
-              .description-1{
-              border-top: solid;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              align-content: center;
-              text-align: center;
-              text-transform: uppercase;
-              margin: 2rem 10rem;
-              font-size: 1.8rem;
-              font-weight: bold
-              }
-              
-                .description-2{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
-                text-align: center;
-                text-transform: uppercase;
-                margin: 2rem 10rem;
-                font-size: 1.4rem;
-                font-weight: bold;
-                }
-              
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      /*-------------------------footer about us-------------------------*/        
-  footer{
-      width: 100%;
-      padding: 50px 0;
-    }
-    .container__footer{
-      display: flex;
-      flex-wrap: wrap;/*que se adapten una abajo de la otra si es necesario*/
-      justify-content: space-between; /*los aomodamos, parecido como en las cards*/
-      max-width: 1200px;
-      margin: auto;
-      margin-top: 100px;
-      flex-direction: row;
-    }
-    .nav__listC{
-      display: flex;
-      flex-direction: column;
-    }
-    .footer__box{
-      display: flex;
-      flex-direction: column; /*Sin esto, se ve todo como fila*/
-      padding: 20px;
-    }
-    .footer__box .logo img{
-      width: 70px;/*Le damos el tamaño al logo*/
-      margin-top: 5px;
-    }
-    .footer__box .terms{
-      max-width: 300px;
-      margin-top: 10px;/*separa el parrafo del logo footer*/
-      font-weight: 300;
-      font-size: 16px; /*tamaño del parrafo*/
-      color: #7a7a7a;
-    }
-    .footer__box h2{
-      margin-bottom: 30px;/*tiramos abajo lo q esta debajo del h2*/
-    }
-    .footer__box a{
-      margin-top: 10px; /*Nos sirve como interlineado*/
-      color: #7a7a7a;
-      font-weight: 700;
-    }
-    .footer__box .nav__list .nav__link{
-      list-style: none;
-      text-decoration: none;
-      color: #7a7a7a;
-      line-height: 10px;/*interlineado de la lista*/
-      text-transform: lowercase;
-      font-weight: 400;
-    }
-    li{
-      margin-top: 10px;
-    }
-    .footer__box a .fab{
-      font-size: 20px;
-    }
-                
-      
-      
-      
-            .description-about{
-              grid-area: desc;
-            }
-            
-              .nav {
-              grid-area: nav;
-              }
-            
-              header{
-              grid-area: header;
-              }
-              main {
-              grid-area: main;
-              margin: auto;
-              width: 100%;
-              }
-              footer {
-              grid-area: footer;
-              }
-              
-              .cards-container{
-                grid-area: cards
-              }
-            
-              .cards-container-about{
-                grid-area: cards
-              }
-              .description-1{
-                grid-area: desc1;
-              }
-              .description-2{
-                grid-area: desc2;
-              }
-              .logo-img-about{
-                  grid-area: logo;
-              }
-              .nav__list-about{
-                  grid-area: navist;
-              }
-  
-  
-  
-              .grid-container{
-                /*background-color: white;*/
-                width: 100%;
-                height: 100vh;
-                margin: 0;
-                padding: 1rem;
-                display: grid;
-                grid-gap: 1rem;        
-                grid-template-rows: auto 1fr 1fr auto;
-                grid-template-columns: repeat(autofit,minmax(10rem,20rem));/*(auto-fill,5rem)*/
-                gap: 1rem;        
-                grid-template-areas:
-                      "header header header"              
-                      "main main main"
-                      "cards cards cards"
-                      "desc desc desc"
-                     "footer footer footer";
-                  align-items: center;
-                }
-                        
-        
-                  .header-container{
-                    font-family: "Bebas Neue", "arial", sans-serif;
-                    font-weight: bold;
-                    font-size: 1.3rem;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    width: 100%;
-                    position: sticky;
-                    top: 0%;
-                    z-index: 2;
-                    color: black;
-                    }
-                    
-                    header{
-                      opacity: .8;
-                    }
-                    .logo-img{
-                    width: 70px;
-                    
-                    }
-                    .nav__list{
-                    display: flex;
-                    list-style-type: none;
-                    
-                    }
-                    .nav__item{
-                    margin-left: 2.5rem;
-                    font-size: 1.4rem;
-                    }
-                    
-                    /*----animation----*/
-                    .nav__item a{
-                      position: relative;/*Que sea relativa absoluta*/
-                      transition: all ease-in-out 250ms;
-                    }
-                    
-                    .nav__item a::after{
-                      content: '';
-                      position: absolute;/*Que ocupe la pantalla pero de forma relativa*/
-                      display: block;
-                      height: .4em;
-                      width: 00%;
-                      background-color: #616b74;
-                      bottom: -1em;
-                      transition: all ease-in-out 250ms;
-                    }
-                    .nav__item a:hover::after{
-                      width: 100%;
-                    }
-                    .nav__item a:hover{
-                      color: #616b74;
-                    }
-    
-    
-                        
-        .main-container{
-          overflow: hidden;
-          font-family: "Bebas Neue", "arial", sans-serif;
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;    
-          color: white;
-          margin-top: -16rem;
-          margin-bottom: 3rem;
-          background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg); /*efecto 1*/
-          object-fit: cover;
-          background-size: cover;
-          background-position: center;
-          }
-      
-        
-        
-          .background-text{
-            text-align: center;
-            align-items: center;
-            color: white;
-            width: 100%;
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 6rem;
-            }
-            .background__title{
-            line-height: 1.5;
-            font-family: "Bebas Neue";
-            font-weight: normal;
-            font-size: 6rem;    
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-transform: uppercase;               
-            letter-spacing: .2rem;
-            }
-            .btn__chow{
-            padding: .7rem;
-            border-radius: 2rem;
-            border: 0.35rem solid rgb(255, 81, 0);
-            margin-top: .3rem;
-            background-color: #d7dfe2;
-            text-transform: uppercase;               
-            }
-        
-        
-          
-        .background__subTitle{
-          letter-spacing: .2rem;
-          text-transform: uppercase;                
-          color: white;
-          margin-bottom: 1rem;
-        }
-      
-      
-      
-      /*cards index*/
-      
-      
-      .cards-container{
-        margin: auto;
-        gap: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-around;
-        flex-direction: row;
-      
-        }
-        
-        .card{
-        overflow: hidden;
-        box-shadow: 0px 2px 20px #d7dfe2;
-        background-color: white;    
-        border-radius: 0.5rem;    
-        position: relative;
-        width: 350px; /*tamaño card*/
-        height: 406px;/*tamaño card*/
-        margin: 1rem;
-        transition: 250ms all ease-in-out;
-        cursor: pointer;
-        }
-        .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 2px 40px #d7dfe2;;
-        }
-        
-        .card-banner img{
-        height: 14rem;
-        width: 100%;
-        object-fit: cover;
-        }
-        .category-tag {
-        font-size: 1.4rem;
-        color: white;
-        background: red;
-        padding: 0.5rem 1.3rem 1rem;
-        text-transform: uppercase;
-        position: absolute;
-        z-index: 1;
-        top: 1rem;
-        border-radius:0 2rem 2rem 0;
-        text-align: center;
-        }
-        .card__btn{
-        padding: .7rem 3rem;
-        border-radius: 2rem;
-        border: 0.35rem solid rgb(255, 81, 0);
-        margin: 0.2rem 0.7rem;
-        background-color: #d7dfe2;
-        transform: translate(67%,-1%);
-        }
-        
-        .card-body{/*texto de la card*/
-          margin: 2rem 1rem 1rem 1rem;
-          text-align: center;
-        }
-        
-        .card__title{/*Titulo que se encuentra dentro de card-body*/
-           line-height: 1.5rem;
-           margin: 1rem 0 0.5rem;
-           font-family: 'Bebas Neue', cursive;
-        }
-        
-        .card__description{/*Descripcion que se encuentra dentro de card-body*/
-           color:#616b74;
-           font-size: 0.9rem;
-           font-family: 'Montserrat', sans-serif;
-        }
-    
-    
-      
-          }
+
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    height: 100vh;
+    justify-content: space-around;
+    margin-top: 1rem;
+    z-index: 1;
+    background: white;
+    margin-bottom: 6rem;
+
+  }
+
+  .card-about {
+    overflow: hidden;
+    box-shadow: 0px 2px 20px #d7dfe2;
+    background-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 350px;
+    /*tamaño card*/
+    height: 200px;
+    /*tamaño card*/
+    /*height: 100vh;*/
+    margin: 3rem 1rem;
+    transition: 250ms all ease-in-out;
+    cursor: pointer;
+    width: 45%;
+    height: 33%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-about:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 40px #d7dfe2;
+  }
+
+
+  .category-tag-about {
+    font-size: 1.4rem;
+    color: white;
+    background: rgb(192, 180, 180, 0.5);
+    padding: 0.5rem 1.3rem 1rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: center;
+  }
+
+
+  /*description*/
+  .description-1 {
+    border-top: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 10rem;
+    font-size: 1.8rem;
+    font-weight: bold
+  }
+
+  .description-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 10rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+
+
+ /*-------------------------footer about us-------------------------*/
+  footer {
+    width: 100%;
+    padding: 50px 0;
+  }
+
+  .container__footer {
+    display: flex;
+    flex-wrap: wrap;
+    /*que se adapten una abajo de la otra si es necesario*/
+    justify-content: space-between;
+    /*los aomodamos, parecido como en las cards*/
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    flex-direction: row;
+  }
+
+  .nav__listC {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__box {
+    display: flex;
+    flex-direction: column;
+    /*Sin esto, se ve todo como fila*/
+    padding: 20px;
+  }
+
+  .footer__box .logo img {
+    width: 70px;
+    /*Le damos el tamaño al logo*/
+    margin-top: 5px;
+  }
+
+  .footer__box .terms {
+    max-width: 300px;
+    margin-top: 10px;
+    /*separa el parrafo del logo footer*/
+    font-weight: 300;
+    font-size: 16px;
+    /*tamaño del parrafo*/
+    color: #7a7a7a;
+  }
+
+  .footer__box h2 {
+    margin-bottom: 30px;
+    /*tiramos abajo lo q esta debajo del h2*/
+  }
+
+  .footer__box a {
+    margin-top: 10px;
+    /*Nos sirve como interlineado*/
+    color: #7a7a7a;
+    font-weight: 700;
+  }
+
+  .footer__box .nav__list .nav__link {
+    list-style: none;
+    text-decoration: none;
+    color: #7a7a7a;
+    line-height: 10px;
+    /*interlineado de la lista*/
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+
+  li {
+    margin-top: 10px;
+  }
+
+  .footer__box a .fab {
+    font-size: 20px;
+  }
 
 
 
 
-        /*nav men*/
-.container-header-men{
+  .description-about {
+    grid-area: desc;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    margin: auto;
+    width: 100%;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .cards-container {
+    grid-area: cards
+  }
+
+  .cards-container-about {
+    grid-area: cards
+  }
+
+  .description-1 {
+    grid-area: desc1;
+  }
+
+  .description-2 {
+    grid-area: desc2;
+  }
+
+  .logo-img-about {
+    grid-area: logo;
+  }
+
+  .nav__list-about {
+    grid-area: navist;
+  }
+
+
+
+  .grid-container {
+    /*background-color: white;*/
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: repeat(autofit, minmax(10rem, 20rem));
+    /*(auto-fill,5rem)*/
+    gap: 1rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "cards cards cards"
+      "desc desc desc"
+      "footer footer footer";
+    align-items: center;
+  }
+
+
+  .header-container {
+    font-family: "Bebas Neue", "arial", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    color: black;
+  }
+
+  header {
+    opacity: .8;
+  }
+
+  .logo-img {
+    width: 70px;
+
+  }
+
+  .nav__list {
+    display: flex;
+    list-style-type: none;
+
+  }
+
+  .nav__item {
+    margin-left: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  /*----animation----*/
+  .nav__item a {
+    position: relative;
+    /*Que sea relativa absoluta*/
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a::after {
+    content: '';
+    position: absolute;
+    /*Que ocupe la pantalla pero de forma relativa*/
+    display: block;
+    height: .4em;
+    width: 00%;
+    background-color: #616b74;
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+  }
+
+  .nav__item a:hover::after {
+    width: 100%;
+  }
+
+  .nav__item a:hover {
+    color: #616b74;
+  }
+
+
+
+  .main-container {
+    overflow: hidden;
+    font-family: "Bebas Neue", "arial", sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: -16rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, rgb(0 0 0 / .2), rgb(0 0 0 / .4)), url(../assets/Denim.jpg);
+    /*efecto 1*/
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+
+  .background-text {
+    text-align: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 6rem;
+  }
+
+  .background__title {
+    line-height: 1.5;
+    font-family: "Bebas Neue";
+    font-weight: normal;
+    font-size: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+  }
+
+  .btn__chow {
+    padding: .7rem;
+    border-radius: 2rem;
+    border: 0.35rem solid rgb(255, 81, 0);
+    margin-top: .3rem;
+    background-color: #d7dfe2;
+    text-transform: uppercase;
+  }
+
+
+
+  .background__subTitle {
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+
+
+  /*cards index*/
+
+
+  .cards-container {
+    margin: auto;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: row;
+
+  }
+
+  .card {
+    overflow: hidden;
+    box-shadow: 0px 2px 20px #d7dfe2;
+    background-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 350px;
+    /*tamaño card*/
+    height: 406px;
+    /*tamaño card*/
+    margin: 1rem;
+    transition: 250ms all ease-in-out;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 40px #d7dfe2;
+    ;
+  }
+
+  .card-banner img {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .category-tag {
+    font-size: 1.4rem;
+    color: white;
+    background: red;
+    padding: 0.5rem 1.3rem 1rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: center;
+  }
+
+  .card__btn {
+    padding: .7rem 3rem;
+    border-radius: 2rem;
+    border: 0.35rem solid rgb(255, 81, 0);
+    margin: 0.2rem 0.7rem;
+    background-color: #d7dfe2;
+    transform: translate(67%, -1%);
+  }
+
+  .card-body {
+    /*texto de la card*/
+    margin: 2rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+
+  .card__title {
+    /*Titulo que se encuentra dentro de card-body*/
+    line-height: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    font-family: 'Bebas Neue', cursive;
+  }
+
+  .card__description {
+    /*Descripcion que se encuentra dentro de card-body*/
+    color: #616b74;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+}
+
+
+
+
+/*nav men*/
+.container-header-men {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1482,72 +1634,89 @@ body{
   position: sticky;
   z-index: 1;
   background-color: white;
-  background-color: /*#d7dfe2*/ rgba(0, 0, 0, 0.22);
+  background-color:
+    /*#d7dfe2*/
+    rgba(0, 0, 0, 0.22);
   margin-bottom: 2.7rem;
 }
-a{
+
+a {
   font-style: none;
   color: white;
   text-decoration: none;
 }
-.nav__list-men{
+
+.nav__list-men {
   display: flex;
   list-style-type: none;
 }
-.nav__item-men{
+
+.nav__item-men {
   margin-left: 2.3rem;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.6rem;
-  
+
 }
-.logo-img-men{
+
+.logo-img-men {
   width: 75px;
 }
 
 
 /**/
 /*main Men*/
-.hero-img-men{
+.hero-img-men {
   width: 400px;
 }
-.hero-container-men{
-  display: flex;/*para que los elementos dentro de esta clase contenedora se pongan uno al lado del otro*/
+
+.hero-container-men {
+  display: flex;
+  /*para que los elementos dentro de esta clase contenedora se pongan uno al lado del otro*/
   justify-content: center;
   align-items: center;
-  gap: 0.5rem; /*Se puede usar para reemplazar el justify space between*/
+  gap: 0.5rem;
+  /*Se puede usar para reemplazar el justify space between*/
   top: 0;
   margin: -3rem;
-  
+
 }
-.hero-men{
+
+.hero-men {
   width: 40%;
-  padding: 4rem; /*Separa todo del nav*/  
+  padding: 4rem;
+  /*Separa todo del nav*/
 }
+
 .hero__title-men {
   margin-bottom: 0.3rem;
   font-size: 40px;
 }
-.hero__subTitle-men{
-  margin-bottom: 2rem; /*margin para separar los elementos*/
+
+.hero__subTitle-men {
+  margin-bottom: 2rem;
+  /*margin para separar los elementos*/
   font-size: 25px;
 }
-.hero__description-men{
+
+.hero__description-men {
   font-size: 15px;
 }
-.main-shadow-men{
-  box-shadow: 0px 2px 20px #d7dfe2;  
-  
+
+.main-shadow-men {
+  box-shadow: 0px 2px 20px #d7dfe2;
+
 }
 
 /*cards men*/
-.cards-grid-men{
+.cards-grid-men {
   display: flex;
   justify-content: space-around;
   gap: 1rem;
   margin: 3rem 3rem;
 }
-.card-men{
+
+.card-men {
   position: relative;
   width: 380px;
   height: min-content;
@@ -1555,14 +1724,17 @@ a{
   background: #ffffff;
   border: 2px solid #e1e3e6;
 }
+
 .card-men .card-header-men h3 {
   color: #404d61;
   font-size: 28px;
 }
+
 .card-men .card-header-men p {
   color: #757d8a;
   font-size: 20px;
 }
+
 .card-men .card-img-men {
   position: relative;
   height: 220px;
@@ -1570,20 +1742,24 @@ a{
   margin: 22px 0;
   overflow: hidden;
 }
+
 .card-men .card-img-men img {
   width: 100%;
   height: 100%;
   transition: .4s;
 }
+
 .card-men .card-details-men {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .card-men .card-details-men .price-men p {
   color: #757d8a;
   font-size: 20px;
 }
+
 .card-men .card-details-men .price-men strong {
   color: #545d6d;
   font-size: 22px;
@@ -1591,64 +1767,83 @@ a{
 
 
 /*footer*/
-footer{
+footer {
   width: 100%;
   padding: 50px 0;
 }
-.container__footer{
+
+.container__footer {
   display: flex;
-  flex-wrap: wrap;/*que se adapten una abajo de la otra si es necesario*/
-  justify-content: space-between; /*los aomodamos, parecido como en las cards*/
+  flex-wrap: wrap;
+  /*que se adapten una abajo de la otra si es necesario*/
+  justify-content: space-between;
+  /*los aomodamos, parecido como en las cards*/
   max-width: 1200px;
   margin: auto;
   margin-top: 100px;
 }
-.nav__listC{
+
+.nav__listC {
   display: flex;
   flex-direction: column;
 }
-.footer__box{
+
+.footer__box {
   display: flex;
-  flex-direction: column; /*Sin esto, se ve todo como fila*/
+  flex-direction: column;
+  /*Sin esto, se ve todo como fila*/
   padding: 20px;
 }
-.footer__box .logo img{
-  width: 70px;/*Le damos el tamaño al logo*/
+
+.footer__box .logo img {
+  width: 70px;
+  /*Le damos el tamaño al logo*/
   /*margin-top: 5px;*/
 }
-.footer__box .terms{
+
+.footer__box .terms {
   max-width: 300px;
-  margin-top: 10px;/*separa el parrafo del logo footer*/
+  margin-top: 10px;
+  /*separa el parrafo del logo footer*/
   font-weight: 300;
-  font-size: 16px; /*tamaño del parrafo*/
+  font-size: 16px;
+  /*tamaño del parrafo*/
   color: #7a7a7a;
 }
-.footer__box h2{
-  margin-bottom: 30px;/*tiramos abajo lo q esta debajo del h2*/
+
+.footer__box h2 {
+  margin-bottom: 30px;
+  /*tiramos abajo lo q esta debajo del h2*/
 }
-.footer__box a{
-  margin-top: 10px; /*Nos sirve como interlineado*/
+
+.footer__box a {
+  margin-top: 10px;
+  /*Nos sirve como interlineado*/
   color: #7a7a7a;
   font-weight: 700;
 }
-.footer__box .nav__list .nav__link{
+
+.footer__box .nav__list .nav__link {
   list-style: none;
   text-decoration: none;
   color: #7a7a7a;
-  line-height: 10px;/*interlineado de la lista*/
+  line-height: 10px;
+  /*interlineado de la lista*/
   text-transform: lowercase;
   font-weight: 400;
 }
-li{
+
+li {
   margin-top: 10px;
 }
-.footer__box a .fab{
+
+.footer__box a .fab {
   font-size: 20px;
 }
 
 
 /*women nav*/
-.container-header-women{
+.container-header-women {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1657,39 +1852,51 @@ li{
   position: sticky;
   z-index: 1;
   background-color: white;
-  background-color: /*#d7dfe2*/ rgba(0, 0, 0, 0.22);
+  background-color:
+    /*#d7dfe2*/
+    rgba(0, 0, 0, 0.22);
   margin-bottom: 2.7rem;
 }
 
 
 /*hero image women*/
-.hero-img-women{
+.hero-img-women {
   width: 400px;
 }
-.hero-container-women{
-  display: flex;/*para que los elementos dentro de esta clase contenedora se pongan uno al lado del otro*/
+
+.hero-container-women {
+  display: flex;
+  /*para que los elementos dentro de esta clase contenedora se pongan uno al lado del otro*/
   justify-content: center;
   align-items: center;
-  gap: 0.5rem; /*Se puede usar para reemplazar el justify space between*/
+  gap: 0.5rem;
+  /*Se puede usar para reemplazar el justify space between*/
   margin: -1.7rem;
-  
-  
+
+
 }
-.hero-women{
+
+.hero-women {
   width: 40%;
-  padding: 4rem; /*Separa todo del nav*/
+  padding: 4rem;
+  /*Separa todo del nav*/
 }
+
 .hero__title-women {
   margin-bottom: 0.3rem;
   font-size: 40px;
 }
-.hero__subTitle-women{
-  margin-bottom: 2rem; /*margin para separar los elementos*/
+
+.hero__subTitle-women {
+  margin-bottom: 2rem;
+  /*margin para separar los elementos*/
   font-size: 25px;
 }
-.hero__description-women{
+
+.hero__description-women {
   font-size: 15px;
 }
+
 /**/
 
 
@@ -1699,7 +1906,7 @@ li{
 
 
 /*nav contact*/
-.container-header-us{
+.container-header-us {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1707,26 +1914,32 @@ li{
   top: 0;
   position: sticky;
   z-index: 1;
-  background-color: /*#d7dfe2*/ rgba(0, 0, 0, 0.22);
+  background-color:
+    /*#d7dfe2*/
+    rgba(0, 0, 0, 0.22);
   margin-bottom: -2.5rem;
 }
-a{
+
+a {
   font-style: none;
   color: white;
   text-decoration: none;
 }
-.nav__list-us{
+
+.nav__list-us {
   display: flex;
   list-style-type: none;
 }
-.nav__item-us{
+
+.nav__item-us {
   margin-left: 2.3rem;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.6rem;
-  
+
 }
-.logo-img-us{
+
+.logo-img-us {
   width: 75px;
 }
 
@@ -1734,26 +1947,34 @@ a{
 /*contact us*/
 
 
-  /*contact us*/
-.main-container-us{
-    display: flex;    
-    justify-content: center;
-    gap: 1rem; /*Se puede usar para reemplazar el justify space between*/
-    
+/*contact us*/
+.main-container-us {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /*Se puede usar para reemplazar el justify space between*/
+
 }
-.form-container{
-    margin-top: 5rem;    
+
+.form-container {
+  margin-top: 5rem;
 }
-h1, .form__content, .form__btn, .form__experience{
-    margin-left: .7rem;
+
+h1,
+.form__content,
+.form__btn,
+.form__experience {
+  margin-left: .7rem;
 }
-.hero-form{
-    width: 400px;
-    height: 500px;
+
+.hero-form {
+  width: 400px;
+  height: 500px;
 }
-input{
-    display: flex;
-    justify-content: center;
-    padding-left: .3rem;
-    
+
+input {
+  display: flex;
+  justify-content: center;
+  padding-left: .3rem;
+
 }

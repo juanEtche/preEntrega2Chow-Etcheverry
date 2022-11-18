@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-header-us">
+        <img class="logo-img-us" src="../assets/undraw_cautious_dog_q-83-f.svg" alt="Logo shark">
+    
+        <nav class="nav-us">
+            <ul class="nav__list-us">                
+                <li class="nav__item">
+                    <a class="nav__link-us" href="../index.html">Home</a> 
+                </li>
+                <li class="nav__item-us">
+                    <a class="nav__link-us" href="../sections/aboutUs.html">about us</a> 
+                </li>
+                <li class="nav__item-us">
+                    <a class="nav__link-us" href="../sections/mujer.html">women</a>
+                </li>
+                <li class="nav__item-us">
+                    <a class="nav__link-us" href="../sections/men.html">men</a>
+                </li>
+                <li class="nav__item-us">
+                    <a class="nav__link-us" href="./../sections/contactUs.html">contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <main class="main-container-us">
+
+        <img class="hero-form" src="./../assets/denimCard.jpg" alt="">
+
+		<form class="form-container" action="#">                            
+            <label class="form__h1" for=""><h1>Trabaja con nosotros</h1></label>
+            
+            <section class="form__content">
+				<label class="form__name" for="Nombre completo">Nombre:
+				<input class="form__fill" type="text" placeholder="Julio Lopez">
+				</label>
+            </section>
+            
+            <section class="form__content">                        
+				<label class="form__email" for="email"> email:
+				<input class="form__fill" type="email" placeholder="juliolopez@gmail.com" name="email">
+				</label>
+            </section>
+			
+            <section class="form__content">                        
+                <label class="form__age" for="Edad"> Edad:
+				<input class="form__fill" type="number" placeholder="25">
+				</label>
+			</section>	
+            
+            <label class="form__experience" for="Contanos tus experiencias"> Contanos tus experiencias:
+            
+                <section class="form__content">				
+				<textarea class="form__fill" placeholder="Experiencias" cols="30" rows="10"></textarea>
+				</label> 				
+            </section>
+
+            <input class="form__btn" type="submit" value="Enviar formulario">
+		
+        </form>
+
+	<a href="../index.html">Volver a Home</a>
+	</main>
+    
+    <article class="description">
+        <p class="description-1">Forma parte de nuestra empresa! Somos una marca canchera que no para de crecer. Sumate!</p>
+    </article>
+
+    <footer>
+        <div class="container__footer">
+            <div class="footer__box"><!--Generamos el codigo de los elementos que van a estar en el contenedor-fila-columna-footer__box-->
+                <div class="logo"> 
+                    <img src="../assets/undraw_cautious_dog_q-83-f.svg" alt="Logo chow">                    
+                </div>                    
+                <div class="terms">
+                    <p><!--podria entrar todxo en la misma clase-->
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas quia quaerat possimus veniam ipsam in eveniet saepe quis blanditiis suscipit fuga unde aliquam quos atque earum minus ducimus, hic vel.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="footer__box">                            
+                <h2>Acerca de chow</h2>
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">women</a>                            
+                <a href="#">men</a>
+                <a href="#">contac us</a>
+            </div>
+            
+            <div class="footer__box categorias">                            
+                <h2>Categorias</h2>
+                <a href="#">Chow</a>
+                <a href="#">Denim</a>
+                <a href="#">Urban</a>                            
+             </div>
+
+            <div class="footer__box">
+                <h2>redes sociales</h2>
+                <a href="#"><i class="fab fa-facebook"></i></a><!--Podemos agregar un ul li-->
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+    </footer>
+
+</body>
